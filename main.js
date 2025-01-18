@@ -1,6 +1,9 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+// En cas d'event squirrel, empêche le lancer de l'app.
+if (require('electron-squirrel-startup')) app.quit();
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
